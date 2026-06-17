@@ -12,6 +12,31 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- ══ INTRO SPLASH ══ -->
+<div class="intro-overlay" id="introOverlay">
+
+  <div class="intro-content">
+
+    <p class="intro-small">wait...</p>
+
+    <h1 class="intro-heading">Close your eyes.</h1>
+
+    <p class="intro-sub">
+      Think about your favourite feeling in the world.<br>
+      Got it?
+    </p>
+
+    <p class="intro-sub2">
+      Good. Now open them. 🎂
+    </p>
+
+    <button class="intro-btn" onclick="enterSite()">
+      I'm ready 💛
+    </button>
+
+  </div>
+
+</div>
 
 <!-- ══ HERO ══ -->
 <section class="hero" id="top">
@@ -94,6 +119,16 @@
 
 </section>
 <script>
+  // ── Intro Splash ──
+  function enterSite() {
+  const overlay = document.getElementById('introOverlay');
+  overlay.classList.add('hidden');
+
+  // After fade out, remove from page entirely
+  setTimeout(() => {
+    overlay.style.display = 'none';
+  }, 800);
+}
   function openModal(id) {
     document.getElementById('modal-' + id).classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -113,6 +148,49 @@
   document.getElementById('modal-' + id).classList.remove('open');
   document.body.style.overflow = '';
   }
+
+  // ── Falling Flowers ──
+  const flowers =['❤️'];
+
+  function createFlower() {
+    const flower = document.createElement('div');
+    flower.classList.add('flower');
+
+    // Random flower emoji
+    flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+
+    // Random horizontal position
+    flower.style.left = Math.random() * 100 + 'vw';
+
+    // Random size so they feel layered
+    const size = Math.random() * 16 + 14;
+    flower.style.fontSize = size + 'px';
+
+    // Random speed — some slow, some fast
+    const duration = Math.random() * 6 + 5;
+    flower.style.animationDuration = duration + 's';
+
+    // Random delay so they don't all fall at once
+    flower.style.animationDelay = Math.random() * 4 + 's';
+
+    // Random gentle sway left or right
+    flower.style.marginLeft = (Math.random() * 40 - 20) + 'px';
+
+    document.body.appendChild(flower);
+
+    // Remove from DOM after animation ends to keep page clean
+    setTimeout(() => {
+      flower.remove();
+    }, (duration + 4) * 1000);
+  }
+
+  // Create a new flower every 400ms
+  setInterval(createFlower, 400);
+
+  // Spawn a first batch immediately so the page doesn't start empty
+  for (let i = 0; i < 10; i++) {
+    setTimeout(createFlower, i * 200);
+}
 </script>
 <!-- ══ MEMORY LANE SECTION ══ -->
 <section class="memory-section" id="memory-lane">
@@ -390,6 +468,231 @@
 
 </section>
 
-<!-- MORE SECTIONS COMING -->
+<!-- ══ LOVE NOTE SECTION ══ -->
+<section class="note-section" id="note">
+
+  <p class="note-eyebrow">FOR YOUR EYES ONLY</p>
+  <h2 class="note-title">A Note From Me</h2>
+
+  <div class="note-card">
+
+    <!-- Envelope icon -->
+    <div class="note-icon-wrap">💌</div>
+
+    <p class="note-greeting">Happy Birthday, my ❤️</p>
+
+    <p class="note-text">
+      There are so many things I want to say to you, and somehow 
+      words never seem enough. But if there's one thing I hope you 
+      always know, it's this: loving you has been one of the most 
+      beautiful experiences of my life.
+    </p>
+
+    <p class="note-text">
+      I love the little things about you that most people might 
+      overlook — the way you smile when you're genuinely happy, 
+      the way your eyes brighten when you're excited, and the way 
+      your presence alone can make even my hardest days feel lighter. 
+      You have this quiet magic about you that makes ordinary moments 
+      unforgettable.
+    </p>
+
+    <p class="note-text">
+      You make me feel understood, appreciated, and inspired to be 
+      better. I admire your heart, your strength, your kindness, and 
+      the way you care for the people you love. Being close to you 
+      has taught me that love isn't just in grand gestures; it's in 
+      the small moments, the conversations that last for hours, the 
+      shared laughter, and the comfort of simply knowing you're there.
+    </p>
+
+    <p class="note-text">
+      Sometimes I catch myself smiling for no reason, only to realize 
+      I've been thinking about you. Other times, I find myself looking 
+      forward to telling you about my day because your opinion matters 
+      to me more than I can explain.
+    </p>
+
+    <p class="note-text">
+      Yeah I know sometimes it gets a little confusing with our little 
+      fights and squabbles but MaaMaa i really do from the bottom of my
+      heart, always remember this baby I your booboo will always endenvour
+      to make you smile cause you look extremely gorgeous when you do.
+    </p>
+
+
+    <p class="note-text">
+      I don't know what the future holds, but I do know this: meeting 
+      you changed something in me. You have become a part of my happiest 
+      thoughts, my favourite memories, and my sincerest hopes.
+    </p>
+
+    <p class="note-text">
+      Thank you for being exactly who you are. Thank you for your 
+      patience, your warmth, and the love you give so effortlessly. 
+      I cherish you more than these words can fully express.
+    </p>
+
+    <p class="note-text">
+      No matter how many times I say "I love you," it will never 
+      quite capture how deeply I mean it.
+    </p>
+
+    <!-- Sign off -->
+    <div class="note-signoff">
+      <p class="note-sign">Always,</p>
+      <p class="note-sign">Yours 🤍</p>
+    </div>
+
+  </div>
+
+  <!-- Hearts at the bottom -->
+  <p class="note-hearts">❤️ ❤️ ❤️</p>
+
+</section>
+
+<!-- ══ 25 REASONS SECTION ══ -->
+<section class="reasons-section" id="reasons">
+
+  <p class="reasons-eyebrow">💌 WITH ALL MY HEART</p>
+  <h2 class="reasons-title">25 Reasons I Love You</h2>
+
+  <div class="reasons-list">
+
+    <div class="reason-card">
+      <p class="reason-num">01</p>
+      <p class="reason-text">I love how your laugh changes depending on what made you laugh — sometimes it's soft, sometimes uncontrollable, and I never get tired of hearing it.</p>
+    </div>
+
+    <div class="reason-card">
+      <p class="reason-num">02</p>
+      <p class="reason-text">I love the way you remember little things I casually mention and bring them up weeks later like they matter — because to you, I matter.</p>
+    </div>
+
+    <div class="reason-card">
+      <p class="reason-num">03</p>
+      <p class="reason-text">I love how your face lights up when you're talking about something you're passionate about.</p>
+    </div>
+
+    <div class="reason-card">
+      <p class="reason-num">04</p>
+      <p class="reason-text">I love that you can make an ordinary day feel like something I'll remember for years.</p>
+    </div>
+
+    <div class="reason-card">
+      <p class="reason-num">05</p>
+      <p class="reason-text">I love the tiny expressions you make when you're pretending not to smile.</p>
+    </div>
+
+    <div class="reason-card">
+      <p class="reason-num">06</p>
+      <p class="reason-text">I love how safe I feel telling you things I don't tell anyone else.</p>
+    </div>
+
+    <div class="reason-card">
+      <p class="reason-num">07</p>
+      <p class="reason-text">I love the way you care deeply, even when you try to act like you don't.</p>
+    </div>
+
+    <div class="reason-card">
+      <p class="reason-num">08</p>
+      <p class="reason-text">I love that you have your own opinions and never pretend to be someone you're not.</p>
+    </div>
+
+    <div class="reason-card">
+      <p class="reason-num">09</p>
+      <p class="reason-text">I love the little habits you've probably never even noticed about yourself — the way you say certain words, the way you react when you're excited, the way you think.</p>
+    </div>
+
+    <div class="reason-card">
+      <p class="reason-num">10</p>
+      <p class="reason-text">I love that being with you feels peaceful, not forced.</p>
+    </div>
+
+    <div class="reason-card">
+      <p class="reason-num">11</p>
+      <p class="reason-text">I love how you somehow know when I need comfort and when I just need someone to sit with me.</p>
+    </div>
+
+    <div class="reason-card">
+      <p class="reason-num">12</p>
+      <p class="reason-text">I love that your kindness isn't performative — it's simply who you are.</p>
+    </div>
+
+    <div class="reason-card">
+      <p class="reason-num">13</p>
+      <p class="reason-text">I love the memories we've created, even the small and random ones.</p>
+    </div>
+
+    <div class="reason-card">
+      <p class="reason-num">14</p>
+      <p class="reason-text">I love the way you make me want to become a better version of myself.</p>
+    </div>
+
+    <div class="reason-card">
+      <p class="reason-num">15</p>
+      <p class="reason-text">I love that you can be strong and soft at the same time.</p>
+    </div>
+
+    <div class="reason-card">
+      <p class="reason-num">16</p>
+      <p class="reason-text">I love how your presence changes my mood, even on difficult days.</p>
+    </div>
+
+    <div class="reason-card">
+      <p class="reason-num">17</p>
+      <p class="reason-text">I love your imperfections because they're part of what makes you uniquely you.</p>
+    </div>
+
+    <div class="reason-card">
+      <p class="reason-num">18</p>
+      <p class="reason-text">I love how you make me laugh when I least expect it.</p>
+    </div>
+
+    <div class="reason-card">
+      <p class="reason-num">19</p>
+      <p class="reason-text">I love that I can imagine future memories with you and they make me smile.</p>
+    </div>
+
+    <div class="reason-card">
+      <p class="reason-num">20</p>
+      <p class="reason-text">I love the way you treat people — with patience, empathy, and sincerity.</p>
+    </div>
+
+    <div class="reason-card">
+      <p class="reason-num">21</p>
+      <p class="reason-text">I love how comfortable silence feels when I'm with you.</p>
+    </div>
+
+    <div class="reason-card">
+      <p class="reason-num">22</p>
+      <p class="reason-text">I love that you challenge me, encourage me, and believe in me.</p>
+    </div>
+
+    <div class="reason-card">
+      <p class="reason-num">23</p>
+      <p class="reason-text">I love the little details about you that nobody else pays attention to, but I do.</p>
+    </div>
+
+    <div class="reason-card">
+      <p class="reason-num">24</p>
+      <p class="reason-text">I love how, out of all the people I could have met, I met you.</p>
+    </div>
+
+    <!-- Special final card -->
+    <div class="reason-card reason-final">
+      <p class="reason-num reason-num-final">25</p>
+      <p class="reason-text reason-text-final">And most of all, I love that every reason on this list still feels too small to explain how much you mean to me.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer">
+  <p class="footer-hearts">❤️ ❤️ ❤️</p>
+  <p class="footer-text">Made with love, especially for you · Happy Birthday, Chiamaka 💛</p>
+</footer>
 </body>
 </html>
