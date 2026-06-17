@@ -571,3 +571,342 @@ body {
 .song-play:hover {
   transform: scale(1.12);
 }
+/* ══════════════════════════
+   LOVE NOTE SECTION
+══════════════════════════ */
+
+.note-section {
+  background: var(--cream);
+  padding: 64px 24px;
+}
+
+.note-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #B07040;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.note-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 7vw, 40px);
+  font-weight: 700;
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+/* The letter card */
+.note-card {
+  background: #ffffff;
+  border-top: 4px solid var(--gold);
+  border-radius: 0 0 20px 20px;
+  padding: 36px 28px 48px;
+  max-width: 480px;
+  margin: 0 auto;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Envelope icon */
+.note-icon-wrap {
+  width: 60px;
+  height: 60px;
+  background: var(--maroon);
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin: 0 auto 28px;
+}
+
+/* Happy Birthday greeting */
+.note-greeting {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+/* Letter body paragraphs */
+.note-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.95;
+  color: var(--text-body);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Sign off */
+.note-signoff {
+  margin-top: 36px;
+  text-align: center;
+  border-top: 1px solid rgba(201, 168, 76, 0.25);
+  padding-top: 28px;
+}
+
+.note-sign {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 24px;
+  color: var(--maroon);
+  line-height: 1.6;
+}
+
+/* Hearts row */
+.note-hearts {
+  text-align: center;
+  font-size: 22px;
+  letter-spacing: 10px;
+  margin-top: 40px;
+}
+/* ══════════════════════════
+   25 REASONS SECTION
+══════════════════════════ */
+
+.reasons-section {
+  background: var(--maroon);
+  padding: 64px 24px;
+}
+
+.reasons-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.reasons-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 7vw, 40px);
+  font-weight: 700;
+  color: var(--text-light);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.reasons-list {
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.reason-card {
+  background: var(--maroon-card);
+  border-radius: 14px;
+  padding: 22px 20px;
+}
+
+.reason-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.reason-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-light);
+  opacity: 0.9;
+}
+
+/* Special card for #25 */
+.reason-final {
+  background: linear-gradient(135deg, var(--maroon-card), #6B1A2A);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+}
+
+.reason-num-final {
+  font-size: 26px;
+}
+
+.reason-text-final {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--gold-light);
+  opacity: 1;
+}
+
+/* ══════════════════════════
+   FOOTER
+══════════════════════════ */
+
+.site-footer {
+  background: var(--maroon-deep);
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.footer-hearts {
+  font-size: 22px;
+  letter-spacing: 8px;
+  margin-bottom: 16px;
+}
+
+.footer-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+/* ══════════════════════════
+   FALLING FLOWERS
+══════════════════════════ */
+
+.flower {
+  position: fixed;
+  top: -40px;
+  font-size: 20px;
+  animation: fall linear infinite;
+  pointer-events: none;
+  z-index: 999;
+  user-select: none;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-40px) rotate(0deg);
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+/* ══════════════════════════
+   INTRO SPLASH
+══════════════════════════ */
+
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--maroon-deep);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.intro-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.intro-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.intro-small {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.intro-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 10vw, 64px);
+  font-weight: 400;
+  color: var(--text-light);
+  line-height: 1.2;
+}
+
+.intro-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.intro-sub2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: var(--gold-light);
+  font-style: italic;
+}
+
+.intro-btn {
+  margin-top: 16px;
+  background: transparent;
+  border: 1px solid rgba(201, 168, 76, 0.5);
+  color: var(--gold-light);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 16px 40px;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.intro-btn:hover {
+  background: rgba(201, 168, 76, 0.1);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+/* ══════════════════════════
+   TYPEWRITER EFFECT
+══════════════════════════ */
+
+/* Paragraphs start invisible */
+.typewriter {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Visible state once triggered */
+.typewriter.typed {
+  opacity: 1;
+}
+
+/* Blinking cursor that appears while typing */
+.typewriter.typing::after {
+  content: '|';
+  color: var(--gold);
+  animation: blink 0.7s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
