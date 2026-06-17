@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Chiamaka 💛</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Your CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="top">
+
+  <p class="hero-eyebrow">If you haven't guessed — it's a love website 💛</p>
+
+  <!-- Her Photo -->
+  <div class="hero-photo-wrap">
+    <img src="images/hero.jpeg" alt="My Princess">
+  </div>
+
+  <!-- Heading -->
+  <p class="hero-label">MADE WITH LOVE · JUST FOR YOU</p>
+  <h1 class="hero-title">Hi, <em>Princess.</em></h1>
+
+  <!-- Welcome message -->
+  <p class="hero-body">
+    Welcome to your little corner of the internet.
+  </p>
+
+  <p class="hero-body">
+    I made this because <span class="highlight">your birthday</span> deserves 
+    more than just a cake and candles. You're warm. You're thoughtful. 
+    You're annoyingly beautiful. And you love in ways that make me feel 
+    like the luckiest person alive.
+  </p>
+
+  <p class="hero-body">
+    So this? This is me choosing you. Loudly. Intentionally. Playfully.
+  </p>
+
+  <p class="hero-birthday">Happy Birthday, Chiamaka. 🎂</p>
+
+  <!-- Scroll button -->
+  <button class="scroll-btn" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">
+    SHALL WE GET TO THE GOOD PART ↓
+  </button>
+
+</section>
+
+<!-- ══ MENU SECTION ══ -->
+<section class="menu-section" id="menu">
+
+  <p class="menu-eyebrow">INSIDE THIS LITTLE WORLD</p>
+  <h2 class="menu-title">What's waiting for you</h2>
+
+  <div class="menu-grid">
+
+    <div class="menu-card" onclick="openModal('memory')">
+      <span class="menu-card-emoji">📸</span>
+      <p class="menu-card-num">01</p>
+      <p class="menu-card-name">Memory Lane</p>
+    </div>
+
+    <div class="menu-card" onclick="openModal('songs')">
+      <span class="menu-card-emoji">🎵</span>
+      <p class="menu-card-num">02</p>
+      <p class="menu-card-name">Songs That Are You</p>
+    </div>
+
+    
+    <div class="menu-card" onclick="openModal('note')">
+      <span class="menu-card-emoji">💌</span>
+      <p class="menu-card-num">03</p>
+      <p class="menu-card-name">A Note for You</p>
+    </div>
+
+    <div class="menu-card" onclick="openModal('reasons')">
+      <span class="menu-card-emoji">❤️</span>
+      <p class="menu-card-num">04</p>
+      <p class="menu-card-name">25 Reasons I Love You</p>
+    </div>
+
+  </div>
+
+  <p class="menu-tagline">
+    A million reasons why I love you — but here's 
+    <a href="#" onclick="openModal('reasons'); return false;">25</a>
+  </p>
+
+</section>
+<script>
+  function openModal(id) {
+    document.getElementById('modal-' + id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(id) {
+    document.getElementById('modal-' + id).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function openChapter(id) {
+  document.getElementById('modal-' + id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+  }
+
+  function closeChapter(id) {
+  document.getElementById('modal-' + id).classList.remove('open');
+  document.body.style.overflow = '';
+  }
+</script>
+<!-- ══ MEMORY LANE SECTION ══ -->
+<section class="memory-section" id="memory-lane">
+
+  <p class="memory-eyebrow">📸 OUR STORY, IN PIECES</p>
+  <h2 class="memory-title">Down Memory Lane</h2>
+
+  <p class="memory-intro">
+    Before you were mine…<br>
+    Before we met…<br>
+    Before all the memories we've built together…<br><br>
+    You were just a girl becoming the woman I now love.<br><br>
+    And somehow, our timelines crossed at the perfect time.<br><br>
+    This is our story — the little you, the grown you,<br>
+    and the future we're still writing.
+  </p>
+
+  <!-- 4 Chapter Buttons -->
+  <div class="chapter-list">
+
+    <button class="chapter-btn" onclick="openChapter('childhood')">
+      <span class="chapter-icon">🧒🏾</span>
+      <div class="chapter-info">
+        <p class="chapter-num">Chapter 01</p>
+        <p class="chapter-name">Before She Was Mine</p>
+        <p class="chapter-sub">THE CHILDHOOD YEARS</p>
+      </div>
+      <span class="chapter-arrow">›</span>
+    </button>
+
+    <button class="chapter-btn" onclick="openChapter('her')">
+      <span class="chapter-icon">🖤</span>
+      <div class="chapter-info">
+        <p class="chapter-num">Chapter 02</p>
+        <p class="chapter-name">The Woman I Brag About</p>
+        <p class="chapter-sub">HER, GROWN & GLOWING</p>
+      </div>
+      <span class="chapter-arrow">›</span>
+    </button>
+
+    <button class="chapter-btn" onclick="openChapter('us')">
+      <span class="chapter-icon">💑</span>
+      <div class="chapter-info">
+        <p class="chapter-num">Chapter 03</p>
+        <p class="chapter-name">My Favourite 'Us' Moments</p>
+        <p class="chapter-sub">TOGETHER, ALWAYS</p>
+      </div>
+      <span class="chapter-arrow">›</span>
+    </button>
+
+    <button class="chapter-btn" onclick="openChapter('future')">
+      <span class="chapter-icon">🌅</span>
+      <div class="chapter-info">
+        <p class="chapter-num">Chapter 04</p>
+        <p class="chapter-name">Where We're Headed</p>
+        <p class="chapter-sub">THE FUTURE WE'RE WRITING</p>
+      </div>
+      <span class="chapter-arrow">›</span>
+    </button>
+
+  </div>
+
+  <p class="memory-footer">
+    Every photo is a moment I never want to forget.
+  </p>
+
+</section>
+
+<!-- ══ CHAPTER MODALS ══ -->
+
+<!-- Chapter 1: Childhood -->
+<div class="modal-overlay" id="modal-childhood">
+  <div class="modal-inner">
+    <button class="modal-close" onclick="closeChapter('childhood')">✕</button>
+    <h2 class="modal-title">🧒🏾 Before She Was Mine</h2>
+
+    <div class="photo-grid">
+
+      <div class="photo-item">
+        <img src="images/child1.jpeg" alt="Little Chiamaka">
+        <p class="photo-caption">Little her 🤍</p>
+      </div>
+
+      <div class="photo-item">
+        <img src="images/child2.jpeg" alt="Little Chiamaka">
+        <p class="photo-caption">Always had that energy ✨</p>
+      </div>
+
+      <div class="photo-item">
+        <img src="images/child3.jpeg" alt="Little Chiamaka">
+        <p class="photo-caption">Too cute 😊</p>
+      </div>
+
+      <div class="photo-item">
+        <img src="images/child4.jpeg" alt="Little Chiamaka">
+        <p class="photo-caption">She was always her 💛</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Chapter 2: Her grown -->
+<div class="modal-overlay" id="modal-her">
+  <div class="modal-inner">
+    <button class="modal-close" onclick="closeChapter('her')">✕</button>
+    <h2 class="modal-title">🖤 The Woman I Brag About</h2>
+
+    <div class="photo-grid">
+
+      <div class="photo-item">
+        <img src="images/her1.jpeg" alt="Chiamaka">
+        <p class="photo-caption">Always elegant 🖤</p>
+      </div>
+
+      <div class="photo-item">
+        <img src="images/her2.jpeg" alt="Chiamaka">
+        <p class="photo-caption">That smile though 😍</p>
+      </div>
+
+      <div class="photo-item">
+        <img src="images/her3.jpeg" alt="Chiamaka">
+        <p class="photo-caption">My person 💛</p>
+      </div>
+
+      <div class="photo-item">
+        <img src="images/her4.jpeg" alt="Chiamaka">
+        <p class="photo-caption">Effortlessly her 🌟</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Chapter 3: Us moments -->
+<div class="modal-overlay" id="modal-us">
+  <div class="modal-inner">
+    <button class="modal-close" onclick="closeChapter('us')">✕</button>
+    <h2 class="modal-title">💑 My Favourite 'Us' Moments</h2>
+
+    <div class="photo-grid">
+
+      <div class="photo-item">
+        <img src="images/us1.jpeg" alt="Us">
+        <p class="photo-caption">Mine 💛</p>
+      </div>
+
+      <div class="photo-item">
+        <img src="images/us2.jpeg" alt="Us">
+        <p class="photo-caption">Forever more 🔥</p>
+      </div>
+
+      <div class="photo-item">
+        <img src="images/us3.jpeg" alt="Us">
+        <p class="photo-caption">Still choosing you 🤍</p>
+      </div>
+
+      <div class="photo-item">
+        <img src="images/us4.jpeg" alt="Us">
+        <p class="photo-caption">More to come ✨</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Chapter 4: Future -->
+<div class="modal-overlay" id="modal-future">
+  <div class="modal-inner">
+    <button class="modal-close" onclick="closeChapter('future')">✕</button>
+    <h2 class="modal-title">🌅 Where We're Headed</h2>
+
+    <div style="padding: 20px 0; text-align: center;">
+      <p class="future-text">
+        More laughter.<br><br>
+        More late-night conversations.<br><br>
+        More random adventures.<br><br>
+        More of you.<br><br>
+        More of us.<br><br>
+        <span class="future-highlight">That's the plan. 💛</span>
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ SONGS SECTION ══ -->
+<section class="songs-section" id="songs">
+
+  <p class="songs-eyebrow">🎵 SONGS THAT ARE YOU</p>
+  <h2 class="songs-title">Songs That Remind Me of You</h2>
+
+  <p class="songs-intro">
+    "Every song here carries a piece of how I feel about you."
+  </p>
+
+  <div class="song-cards">
+
+    <!-- Song 1 -->
+    <div class="song-card">
+      <div class="song-album">🎵</div>
+      <div class="song-info">
+        <p class="song-title">Obimo</p>
+        <p class="song-artist">Adekunle Gold</p>
+        <p class="song-note">
+          "Warm, steady, intentional — just like your love."
+        </p>
+      </div>
+      <a class="song-play"
+         href="https://open.spotify.com/search/Obimo%20Adekunle%20Gold"
+         target="_blank">▶</a>
+    </div>
+
+    <!-- Song 2 -->
+    <div class="song-card">
+      <div class="song-album">🎵</div>
+      <div class="song-info">
+        <p class="song-title">One of One</p>
+        <p class="song-artist">Simi</p>
+        <p class="song-note">
+          "Because that's exactly what you are to me."
+        </p>
+      </div>
+      <a class="song-play"
+         href="https://open.spotify.com/search/One%20of%20One%20Simi"
+         target="_blank">▶</a>
+    </div>
+
+    <!-- Song 3 — replace with your own -->
+    <div class="song-card">
+      <div class="song-album">🎵</div>
+      <div class="song-info">
+        <p class="song-title">Beautiful Now</p>
+        <p class="song-artist">Jon Bellion</p>
+        <p class="song-note">
+          "Write why this song reminds you of her."
+        </p>
+      </div>
+      <a class="song-play"
+         href="https://open.spotify.com/track/2ISSQPb9LHHiV6ng2NXosL?si=EavmTU2TQyuVnd5wHTdB_w&rowId=8897ecb0b24483c2"
+         target="_blank">▶</a>
+    </div>
+
+    <!-- Song 4 — replace with your own -->
+    <div class="song-card">
+      <div class="song-album">🎵</div>
+      <div class="song-info">
+        <p class="song-title">Can't leave you alone</p>
+        <p class="song-artist">Maroon 5</p>
+        <p class="song-note">
+          "Write why this song reminds you of her."
+        </p>
+      </div>
+      <a class="song-play"
+         href="https://open.spotify.com/track/5kS3Kw2elRTrodnsyQuhvI?si=B5kFZbe_QM2LWfBvQm1Uqw"
+         target="_blank">▶</a>
+    </div>
+
+    <!-- Song 5 — replace with your own -->
+    <div class="song-card">
+      <div class="song-album">🎵</div>
+      <div class="song-info">
+        <p class="song-title">Selfish</p>
+        <p class="song-artist">Justin Timberlake</p>
+        <p class="song-note">
+          "Write why this song reminds you of her."
+        </p>
+      </div>
+      <a class="song-play"
+         href="https://open.spotify.com/track/0QosomGFiJYOxj2ViZfqng?si=goZHY1neRUqtl2_XgMKtaA"
+         target="_blank">▶</a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- MORE SECTIONS COMING -->
+</body>
+</html>

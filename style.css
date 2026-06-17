@@ -1,0 +1,573 @@
+/* ── Reset & Base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #5C1220;
+  color: #F0E6D3;
+  overflow-x: hidden;
+}
+
+/* ── Colour Variables ── */
+:root {
+  --maroon:      #5C1220;
+  --maroon-deep: #3D0B15;
+  --maroon-card: #4A1020;
+  --cream:       #F5EFE6;
+  --cream-light: #FAF7F2;
+  --gold:        #C9A84C;
+  --gold-light:  #E2C97E;
+  --text-light:  #F0E6D3;
+  --text-muted:  #C4A882;
+  --text-dark:   #1A0808;
+  --text-body:   #3D1A1A;
+}
+/* ══════════════════════════
+   HERO SECTION
+══════════════════════════ */
+
+.hero {
+  min-height: 100vh;
+  background: var(--maroon-deep);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 24px 64px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle gold glow in background */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 30%,
+    rgba(201, 168, 76, 0.08) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* "if you haven't guessed..." */
+.hero-eyebrow {
+  font-size: 12px;
+  font-style: italic;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+/* Photo frame */
+.hero-photo-wrap {
+  width: 280px;
+  height: 340px;
+  border: 2px solid var(--gold);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  box-shadow: 0 0 40px rgba(201, 168, 76, 0.15);
+}
+
+.hero-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* MADE WITH LOVE label */
+.hero-label {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+/* Hi, Princess */
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(42px, 10vw, 64px);
+  font-weight: 400;
+  color: var(--text-light);
+  text-align: center;
+  margin-bottom: 32px;
+  line-height: 1.1;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+/* Body paragraphs */
+.hero-body {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--text-light);
+  text-align: center;
+  max-width: 360px;
+  opacity: 0.88;
+  margin-bottom: 16px;
+}
+
+.hero-body .highlight {
+  color: var(--gold-light);
+  font-weight: 500;
+}
+
+/* Happy Birthday line */
+.hero-birthday {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 26px;
+  color: var(--gold-light);
+  text-align: center;
+  margin: 24px 0;
+}
+
+/* Scroll button */
+.scroll-btn {
+  margin-top: 32px;
+  background: transparent;
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  color: var(--text-muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.scroll-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+/* ══════════════════════════
+   MENU SECTION
+══════════════════════════ */
+
+.menu-section {
+  background: var(--cream);
+  padding: 64px 24px;
+}
+
+.menu-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #B07040;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.menu-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 7vw, 40px);
+  font-weight: 700;
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* The 6 cards */
+.menu-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.menu-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px 20px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.menu-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+}
+
+.menu-card-emoji {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.menu-card-num {
+  font-size: 11px;
+  color: #B0A090;
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+
+.menu-card-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+/* "A million reasons..." tagline */
+.menu-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: #B07040;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.menu-tagline a {
+  color: #B07040;
+  text-decoration: underline;
+  text-decoration-color: rgba(176, 112, 64, 0.4);
+}
+/* ══════════════════════════
+   MEMORY LANE SECTION
+══════════════════════════ */
+
+.memory-section {
+  background: var(--maroon);
+  padding: 64px 24px;
+}
+
+.memory-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.memory-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 8vw, 52px);
+  font-weight: 400;
+  color: var(--text-light);
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.memory-intro {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 17px;
+  line-height: 2;
+  color: var(--text-muted);
+  text-align: center;
+  max-width: 380px;
+  margin: 0 auto 48px;
+}
+
+/* Chapter buttons */
+.chapter-list {
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chapter-btn {
+  background: var(--maroon-card);
+  border: none;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  text-align: left;
+  transition: background 0.2s;
+}
+
+.chapter-btn:hover {
+  background: #5a1525;
+}
+
+.chapter-icon {
+  font-size: 28px;
+  width: 44px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.chapter-info {
+  flex: 1;
+}
+
+.chapter-num {
+  font-size: 11px;
+  font-style: italic;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.chapter-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: var(--text-light);
+  font-weight: 700;
+}
+
+.chapter-sub {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.chapter-arrow {
+  color: var(--gold);
+  font-size: 22px;
+}
+
+.memory-footer {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* ══════════════════════════
+   MODALS (popups)
+══════════════════════════ */
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 4, 8, 0.95);
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.modal-overlay.open {
+  display: block;
+}
+
+.modal-inner {
+  background: var(--maroon-deep);
+  min-height: 100vh;
+  padding: 24px 20px 60px;
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: var(--text-light);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  color: var(--text-light);
+  font-weight: 700;
+  margin-bottom: 28px;
+  padding-right: 48px;
+}
+
+/* Photo grid inside modals */
+.photo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.photo-item {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background: var(--maroon-card);
+  aspect-ratio: 3/4;
+}
+
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  padding: 24px 12px 10px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: #fff;
+}
+
+/* Future chapter text */
+.future-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.future-highlight {
+  color: var(--gold-light);
+  font-size: 26px;
+}
+/* ══════════════════════════
+   SONGS SECTION
+══════════════════════════ */
+
+.songs-section {
+  background: var(--cream);
+  padding: 64px 24px;
+}
+
+.songs-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #B07040;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.songs-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 7vw, 40px);
+  font-weight: 700;
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.songs-intro {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text-body);
+  text-align: center;
+  max-width: 360px;
+  margin: 0 auto 40px;
+}
+
+/* Song cards container */
+.song-cards {
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Individual song card */
+.song-card {
+  background: #C0392B;
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Album art placeholder */
+.song-album {
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.song-info {
+  flex: 1;
+}
+
+.song-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.song-artist {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 6px;
+}
+
+.song-note {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.5;
+}
+
+/* Spotify play button */
+.song-play {
+  width: 40px;
+  height: 40px;
+  background: #1DB954;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.song-play:hover {
+  transform: scale(1.12);
+}
